@@ -9,4 +9,24 @@ public class Pooflix {
 
     public List<Serie> series = new ArrayList<>();
 
+    public void inicializarCatalogo() {
+
+
+    }
+
+    public Serie buscarSerie(String titulo) {
+
+        for (Serie s : this.series){
+            
+            if (s.nombre.equals(titulo)){
+
+                return s;
+            }
+
+        }
+
+        return null;
+
+    }
+
 }
