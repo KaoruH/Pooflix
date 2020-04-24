@@ -57,10 +57,17 @@ public class App {
             
         }
 
+        miPooflix.inicializarListaNominados();
+
+        miPooflix.reproducirTrailersDeNominacion();
+
+    
+
 
         int lala;
 
         lala = 0;
+        
 
     }
 }

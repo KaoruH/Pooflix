@@ -32,6 +32,6 @@ public class Websodio extends Episodio {
 
      public void enviarAlertaDeQueEstaOnline(){
          //mandaria un mail a los usuarios avisando que ya esta disponible para ver.
-         System.out.println("nviando mail con url " + this.url);
+         System.out.println("Enviando mail con url " + this.url);
      }
 }

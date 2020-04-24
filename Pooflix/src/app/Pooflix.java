@@ -9,6 +9,8 @@ public class Pooflix {
 
     private List<Serie> series = new ArrayList<>();
 
+    private List<INominable> nominados = new ArrayList<>();
+
     public void setListaSerie(List<Serie> series) {
         this.series = series;
     }
@@ -29,6 +31,25 @@ public class Pooflix {
 
         this.inicializarWitcher();
         this.inicializarTwelveMonkeys();
+        this.inicializarPelis();
+
+    }
+
+    public void inicializarPelis() {
+
+        Pelicula peli = new Pelicula("Inception", 2010, 148);
+        Actor actor = new Actor("Leonardo DiCaprio", 45,"Dom Cobb");
+
+        peli.getElenco().add(actor);
+
+        this.peliculas.add(peli);
+
+        peli = new Pelicula("Interstellar", 2014, 169);
+        actor = new Actor("Matthew McConaughey", 50,"Joseph Cooper");
+
+        peli.getElenco().add(actor);
+
+        this.peliculas.add(peli);     
 
     }
 
@@ -192,5 +213,37 @@ public class Pooflix {
         return null;
 
     }
+
+    public List<INominable> getNominados() {
+        return nominados;
+    }
+
+    public void setNominados(List<INominable> nominados) {
+        this.nominados = nominados;
+    }
+
+    public void inicializarListaNominados() {
+
+        for (Pelicula peli : this.peliculas) {
+            this.getNominados().add(peli);
+            for (Actor actor : peli.getElenco())
+                this.getNominados().add(actor);
+
+        }
+        for (Serie serie : this.series) {
+            for (Actor actor : serie.getElenco())
+                this.getNominados().add(actor);
+
+        }
+    }
+
+    public void reproducirTrailersDeNominacion() {
+        for (INominable nominado : this.getNominados()) {
+            
+            nominado.reproducirTrailerNominacion();
+        }
+    }
+
+    
 
 }
