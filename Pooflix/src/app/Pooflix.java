@@ -5,20 +5,183 @@ import java.util.List;
 
 public class Pooflix {
 
-    public List<Pelicula> peliculas = new ArrayList<>();
+    private List<Pelicula> peliculas = new ArrayList<>();
 
-    public List<Serie> series = new ArrayList<>();
+    private List<Serie> series = new ArrayList<>();
+
+    public void setListaSerie(List<Serie> series) {
+        this.series = series;
+    }
+
+    public List<Serie> getListaSerie() {
+        return this.series;
+    }
+
+    public void setListaPelicula(List<Pelicula> peliculas) {
+        this.peliculas = peliculas;
+    }
+
+    public List<Pelicula> getListaPelicula() {
+        return this.peliculas;
+    }
 
     public void inicializarCatalogo() {
 
+        this.inicializarWitcher();
+        this.inicializarTwelveMonkeys();
+
+    }
+
+    public void inicializarWitcher() {
+
+        Clasificacion sixteenplus = new Clasificacion("Mayor 16", 16, "Sólo mayor 16 años");
+
+        Genero fantasy = new Genero("Fantasy", "Cosas que no existen. Supuestamente.");
+        //fantasy.setNombre("Fantasy");
+        //fantasy.setDescripcion("Cosas que no existen");
+
+        Serie witcher = new Serie();
+        witcher.setNombre("Witcher");
+        witcher.setAnio(2019);
+        witcher.setDescripcion("Geralt of Rivia is a witcher. Ciri is his child of surprise. Surprise.");
+        witcher.setClasificacion(sixteenplus);
+        witcher.setGenero(fantasy);
+
+        Actor actor = new Actor();
+        actor.setNombre("Henry Cavill");
+        actor.setEdad(36);
+        actor.setPersonaje("Geralt of Rivia");
+
+        witcher.getElenco().add(actor);
+
+        actor = new Actor();
+        actor.setNombre("Freya Allan");
+        actor.setEdad(18);
+        actor.setPersonaje("Ciri");
+
+        witcher.getElenco().add(actor);
+
+        actor = new Actor();
+        actor.setNombre("Anya Chalotra");
+        actor.setEdad(23);
+        actor.setPersonaje("Yennefer de Vengerberg");
+
+        witcher.getElenco().add(actor);
+
+        this.series.add(witcher);
+
+        Temporada temporadaWitcher = new Temporada(1);
+        // temporadaWitcher.setNumeros(1);
+
+        witcher.getTemporadas().add(temporadaWitcher);
+
+        Episodio episodiosWitcher = new Episodio(1, "The End's Beginning", 61);
+        episodiosWitcher.setDescripcion("Geralt enters the town of Blaviken and meets Renfri");
+
+        temporadaWitcher.getEpisodios().add(episodiosWitcher);
+
+        episodiosWitcher = new Episodio(2, "Four Marks", 60);
+        episodiosWitcher.setDescripcion("Yennefer from Vengerberg of Aedirn is sold to Tissaia de Vries");
+
+        temporadaWitcher.getEpisodios().add(episodiosWitcher);
+
+        episodiosWitcher = new Episodio(3, "Betrayer Moon", 67);
+        episodiosWitcher.setDescripcion("Yennefer and Istredd become lovers while finishing their training");
+
+        temporadaWitcher.getEpisodios().add(episodiosWitcher);
+
+        episodiosWitcher = new Episodio(4, "Of Banquets, Bastards and Burials", 62);
+        episodiosWitcher.setDescripcion("Geralt accompanies Jaskier to the betrothal feast of Princess Pavetta.");
+
+        temporadaWitcher.getEpisodios().add(episodiosWitcher);
+
+        Websodio webi = new Websodio(8, "Chaos Chaos Websodio", 15, "https://locasoyyo.com");
+        webi.setDescripcion("Un websodio creado sólo para chequear");
+
+        temporadaWitcher.getEpisodios().add(webi);
+
+    }
+
+    public void inicializarTwelveMonkeys() {
+
+        Clasificacion fourteenplus = new Clasificacion("Mayor 14", 14, "Sólo mayor 14 años");
+
+        Genero cienciaFiccion = new Genero("Ciencia Ficción", "Que todavia no existe. Soy optimista.");
+        //cienciaFiccion.setNombre("Ciencia Ficción");
+        //cienciaFiccion.setDescripcion("Que es ficticio y que es ciencia.");
+
+        Serie twelveMonkeys = new Serie();
+        twelveMonkeys.setNombre("Twelve Monkeys");
+        twelveMonkeys.setAnio(2015);
+        twelveMonkeys.setDescripcion("Time traveler James Cole trying to avoid a lethal virus");
+        twelveMonkeys.setClasificacion(fourteenplus);
+        twelveMonkeys.setGenero(cienciaFiccion);
+
+        Actor actor = new Actor();
+        actor.setNombre("Aaron Stanford");
+        actor.setEdad(43);
+        actor.setPersonaje("James Cole");
+
+        twelveMonkeys.getElenco().add(actor);
+
+        actor = new Actor();
+        actor.setNombre("Amanda Schull");
+        actor.setEdad(41);
+        actor.setPersonaje("Dr. Cassandra Railly");
+
+        twelveMonkeys.getElenco().add(actor);
+
+        this.series.add(twelveMonkeys);
+
+        Temporada temporadaTwelveMonkeys = new Temporada(1);
+        // temporadaTwelveMonkeys.setNumeros(1);
+
+        twelveMonkeys.getTemporadas().add(temporadaTwelveMonkeys);
+
+        temporadaTwelveMonkeys = new Temporada(2);
+        // temporadaTwelveMonkeys.setNumeros(2);
+
+        twelveMonkeys.getTemporadas().add(temporadaTwelveMonkeys);
+
+        temporadaTwelveMonkeys = new Temporada(3);
+        // temporadaTwelveMonkeys.setNumeros(3);
+
+        twelveMonkeys.getTemporadas().add(temporadaTwelveMonkeys);
+
+        temporadaTwelveMonkeys = new Temporada(4);
+        // temporadaTwelveMonkeys.setNumeros(4);
+
+        twelveMonkeys.getTemporadas().add(temporadaTwelveMonkeys);
+
+        Episodio episodiosTwelveMonkeys = new Episodio(1, "Splinter", 57);
+        episodiosTwelveMonkeys
+                .setDescripcion("En 2017, una plaga mortal mata a 7 billones de personas a nivel mundial");
+
+        temporadaTwelveMonkeys.getEpisodios().add(episodiosTwelveMonkeys);
+
+        episodiosTwelveMonkeys = new Episodio(5, "Bodies of Water", 60);
+        episodiosTwelveMonkeys
+                .setDescripcion("Jennifer envía a Railly al 2016 para encontrarse con su versión más joven");
+
+        temporadaTwelveMonkeys.getEpisodios().add(episodiosTwelveMonkeys);
+
+        episodiosTwelveMonkeys = new Episodio(10, "Witness", 59);
+        episodiosTwelveMonkeys.setDescripcion("Cole, Railly y Athan llegan en 1959 a la Casa de Cedro y Pino.");
+
+        temporadaTwelveMonkeys.getEpisodios().add(episodiosTwelveMonkeys);
+
+        episodiosTwelveMonkeys = new Episodio(1, "The End", 62);
+        episodiosTwelveMonkeys.setDescripcion("Sin spoilers ;)");
+
+        temporadaTwelveMonkeys.getEpisodios().add(episodiosTwelveMonkeys);
 
     }
 
     public Serie buscarSerie(String titulo) {
 
-        for (Serie s : this.series){
-            
-            if (s.nombre.equals(titulo)){
+        for (Serie s : this.series) {
+
+            if (s.getNombre().equals(titulo)) {
 
                 return s;
             }

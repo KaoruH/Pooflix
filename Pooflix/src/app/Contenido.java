@@ -5,16 +5,66 @@ import java.util.List;
 
 public class Contenido {
 
-    public String nombre;
+    private String nombre;
 
-    public Clasificacion clasificacion;
+    private Clasificacion clasificacion;
 
-    public Genero genero;
+    private Genero genero;
 
-    public int anio;
+    private int anio;
 
-    public String descripcion;
+    private String descripcion;
 
-    public List<Actor> elenco = new ArrayList<>();
+    private List<Actor> elenco = new ArrayList<>();
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    public String getNombre(){
+        return this.nombre;
+    }
+
+    public void setClasificacion(Clasificacion clasificacion){
+        this.clasificacion = clasificacion;
+    }
+
+    public Clasificacion getClasificacion(){
+        return this.clasificacion;
+    }
+
+    public void setGenero(Genero genero){
+        this.genero = genero;
+    }
+
+    public Genero getGenero(){
+        return this.genero;
+    }
+
+    public void setAnio(int anio){
+        this.anio = anio;
+    }
+
+    public int getAnio(){
+        return this.anio;
+    }
+
+    public void setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+
+    public String getDescripcion(){
+        return this.descripcion;
+    }
+
+    public void setElenco(List<Actor> elenco){
+        this.elenco = elenco;
+    }
+
+    public List<Actor> getElenco(){
+        return this.elenco;
+    }
+
+
 
 }
