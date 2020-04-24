@@ -5,6 +5,21 @@ import java.util.List;
 
 public class Serie extends Contenido {
 
+    public Serie(String nombre, int anio){
+
+        this.setNombre(nombre);
+        this.setAnio(anio);      
+
+    }
+
+    public Serie(String nombre, int anio, Genero genero, Clasificacion clasificacion){
+
+        this(nombre, anio);
+        this.setGenero(genero);
+        this.setClasificacion(clasificacion);
+
+    }
+
     private List<Temporada> temporadas = new ArrayList<>();
 
     public Temporada getTemporada(int nro) {

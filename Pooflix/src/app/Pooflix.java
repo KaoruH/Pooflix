@@ -40,31 +40,31 @@ public class Pooflix {
         //fantasy.setNombre("Fantasy");
         //fantasy.setDescripcion("Cosas que no existen");
 
-        Serie witcher = new Serie();
-        witcher.setNombre("Witcher");
-        witcher.setAnio(2019);
+        Serie witcher = new Serie("Witcher", 2019, fantasy, sixteenplus);
+        //witcher.setNombre("Witcher");
+        //witcher.setAnio(2019);
         witcher.setDescripcion("Geralt of Rivia is a witcher. Ciri is his child of surprise. Surprise.");
-        witcher.setClasificacion(sixteenplus);
-        witcher.setGenero(fantasy);
+        //witcher.setGenero(fantasy);
+        //witcher.setClasificacion(sixteenplus);
 
-        Actor actor = new Actor();
-        actor.setNombre("Henry Cavill");
-        actor.setEdad(36);
-        actor.setPersonaje("Geralt of Rivia");
-
-        witcher.getElenco().add(actor);
-
-        actor = new Actor();
-        actor.setNombre("Freya Allan");
-        actor.setEdad(18);
-        actor.setPersonaje("Ciri");
+        Actor actor = new Actor("Henry Cavill", 36, "Geralt of Rivia");
+        //actor.setNombre("Henry Cavill");
+        //actor.setEdad(36);
+        //actor.setPersonaje("Geralt of Rivia");
 
         witcher.getElenco().add(actor);
 
-        actor = new Actor();
-        actor.setNombre("Anya Chalotra");
-        actor.setEdad(23);
-        actor.setPersonaje("Yennefer de Vengerberg");
+        actor = new Actor("Freya Allan", 18, "Ciri");
+        //actor.setNombre("Freya Allan");
+        //actor.setEdad(18);
+        //actor.setPersonaje("Ciri");
+
+        witcher.getElenco().add(actor);
+
+        actor = new Actor("Anya Chalotra", 23, "Yennefer de Vengerberg");
+        //actor.setNombre("Anya Chalotra");
+        //actor.setEdad(23);
+        //actor.setPersonaje("Yennefer de Vengerberg");
 
         witcher.getElenco().add(actor);
 
@@ -110,24 +110,25 @@ public class Pooflix {
         //cienciaFiccion.setNombre("Ciencia Ficción");
         //cienciaFiccion.setDescripcion("Que es ficticio y que es ciencia.");
 
-        Serie twelveMonkeys = new Serie();
-        twelveMonkeys.setNombre("Twelve Monkeys");
-        twelveMonkeys.setAnio(2015);
+        Serie twelveMonkeys = new Serie("Twelve Monkeys", 2015, cienciaFiccion, fourteenplus);
+        //twelveMonkeys.setNombre("Twelve Monkeys");
+        //twelveMonkeys.setAnio(2015);
         twelveMonkeys.setDescripcion("Time traveler James Cole trying to avoid a lethal virus");
-        twelveMonkeys.setClasificacion(fourteenplus);
-        twelveMonkeys.setGenero(cienciaFiccion);
+        //twelveMonkeys.setGenero(cienciaFiccion);
+        //twelveMonkeys.setClasificacion(fourteenplus);
+        
 
-        Actor actor = new Actor();
-        actor.setNombre("Aaron Stanford");
-        actor.setEdad(43);
-        actor.setPersonaje("James Cole");
+        Actor actor = new Actor("Aaron Stanford", 42, "James Cole");
+        //actor.setNombre("Aaron Stanford");
+        //actor.setEdad(43);
+        //actor.setPersonaje("James Cole");
 
         twelveMonkeys.getElenco().add(actor);
 
-        actor = new Actor();
-        actor.setNombre("Amanda Schull");
-        actor.setEdad(41);
-        actor.setPersonaje("Dr. Cassandra Railly");
+        actor = new Actor("Amanda Schull", 41, "Dr. Cassandra Railly");
+        //actor.setNombre("Amanda Schull");
+        //actor.setEdad(41);
+        //actor.setPersonaje("Dr. Cassandra Railly");
 
         twelveMonkeys.getElenco().add(actor);
 
