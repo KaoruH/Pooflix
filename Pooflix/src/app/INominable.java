@@ -10,5 +10,5 @@ public interface INominable{
 
     void sacarSelfie(List<Actor> elenco);
 
-    boolean estaNominado();
+    boolean estaNominada();
 }

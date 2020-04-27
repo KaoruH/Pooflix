@@ -11,19 +11,19 @@ public class Pooflix {
 
     private List<INominable> nominados = new ArrayList<>();
 
-    public void setListaSerie(List<Serie> series) {
+    public void setSerie(List<Serie> series) {
         this.series = series;
     }
 
-    public List<Serie> getListaSerie() {
+    public List<Serie> getSerie() {
         return this.series;
     }
 
-    public void setListaPelicula(List<Pelicula> peliculas) {
+    public void setPelicula(List<Pelicula> peliculas) {
         this.peliculas = peliculas;
     }
 
-    public List<Pelicula> getListaPelicula() {
+    public List<Pelicula> getPelicula() {
         return this.peliculas;
     }
 
@@ -239,11 +239,13 @@ public class Pooflix {
 
     public void reproducirTrailersDeNominacion() {
         for (INominable nominado : this.getNominados()) {
-            
             nominado.reproducirTrailerNominacion();
+            if(nominado instanceof Actor){
+                Actor actor = (Actor)nominado;
+                actor.decirDiscurso();
+            }
         }
     }
 
-    
 
 }

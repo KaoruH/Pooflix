@@ -41,9 +41,16 @@ public class Actor extends Persona implements INominable {
     }
 
     @Override
-    public boolean estaNominado() {
+    public boolean estaNominada() {
+
+        System.out.println(this.getNombre() + " está haciendo un discurso");
 
         return true;
+    }
+
+    public void decirDiscurso(){
+
+        System.out.println("Quiero agradecer a...");
     }
 
 

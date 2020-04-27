@@ -37,9 +37,11 @@ public class Pelicula extends Contenido implements INominable {
     }
 
     @Override
-    public boolean estaNominado() {
+    public boolean estaNominada() {
 
-        return false;
+        System.out.println("Los integrantes de la pelicula " + this.getNombre() + " estan haciendo un discurso");
+
+        return true;
     }
 
 }
